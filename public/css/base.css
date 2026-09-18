@@ -305,27 +305,6 @@ tbody tr:last-child td {
   color: white;
 }
 
-/* sidebar footer */
-.sidebar-footer {
-  margin-top: 30px;
-  padding: 20px 15px;
-  text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.footer-text {
-  color: rgba(255, 255, 255, 0.6); /* Couleur blanche adoucie */
-  font-size: 0.8rem;
-  line-height: 1.4;
-}
-
-.footer-text span {
-  display: block;
-  margin-top: 4px;
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.4); 
-}
-
 img {
   max-width: 100%;
   border-radius: 60%;

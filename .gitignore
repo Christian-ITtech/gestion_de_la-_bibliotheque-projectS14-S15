@@ -1,0 +1,17 @@
+# Dépendances (régénérées via npm install)
+node_modules/
+
+# Variables d'environnement (contient des secrets)
+.env
+
+# Logs
+npm-debug.log*
+*.log
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Éditeurs
+.vscode/
+.idea/

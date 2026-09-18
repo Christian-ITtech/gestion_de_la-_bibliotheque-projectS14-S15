@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tableau de bord — Bibliothèque de quartier</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <nav class="sidebar">
+      <div class="sidebar-brand">
+        <div>
+            <img src="assets/logo.jpg" alt="Logo de la bibliothèque">
+        </div>
+      </div>
+      <a href="index.html" class="nav-link active">Tableau de bord</a>
+      <a href="livres.html" class="nav-link">Livres</a>
+      <a href="auteurs.html" class="nav-link">Auteurs</a>
+      <a href="adherents.html" class="nav-link">Adhérents</a>
+      <a href="emprunts.html" class="nav-link">Emprunts</a>
+
+         
+      <footer class="sidebar-footer">
+      <p class="footer-text">
+        &copy; 2026 Bibliothèque de Quartier.<br>
+        <span>Le cœur de notre communauté, une page à la fois.</span>
+      </p>
+    </footer>
+
+    </nav>
+
+    <main class="main">
+
+      <div class="page-header">
+        <div>
+          <h1><span>Tableau</span> de bord</h1>
+          <p>Vue d'ensemble de l'activité de la bibliothèque.</p>
+        </div>
+      </div>
+
+      <div id="message" class="message"></div>
+
+      <div id="stats" class="stat-grid">
+        <p class="text-muted">Chargement des statistiques...</p>
+      </div>
+
+      <div class="highlight-grid">
+        <div class="card highlight-card">
+          <div class="label">Livre le plus emprunté</div>
+          <div id="livre-populaire-nom" class="name">—</div>
+          <div id="livre-populaire-compte" class="count"></div>
+        </div>
+        <div class="card highlight-card">
+          <div class="label">Adhérent le plus actif</div>
+          <div id="adherent-actif-nom" class="name">—</div>
+          <div id="adherent-actif-compte" class="count"></div>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

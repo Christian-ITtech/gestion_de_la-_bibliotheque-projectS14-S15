@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Auteurs — Bibliothèque de quartier</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/auteurs.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <nav class="sidebar">
+      <div class="sidebar-brand">
+        <div>
+            <img src="assets/logo.jpg" alt="Logo de la bibliothèque">
+        </div>
+      </div>
+      <a href="index.html" class="nav-link">Tableau de bord</a>
+      <a href="livres.html" class="nav-link">Livres</a>
+      <a href="auteurs.html" class="nav-link active">Auteurs</a>
+      <a href="adherents.html" class="nav-link">Adhérents</a>
+      <a href="emprunts.html" class="nav-link">Emprunts</a>
+
+       <footer class="sidebar-footer">
+      <p class="footer-text">
+        &copy; 2026 Bibliothèque de Quartier.<br>
+        <span>Le cœur de notre communauté, une page à la fois.</span>
+      </p>
+      </footer>
+    </nav>
+
+    <main class="main">
+
+      <div class="page-header">
+        <div>
+          <h1>Auteurs</h1>
+          <p>Liste des auteurs enregistrés.</p>
+        </div>
+        <button id="btn-afficher-formulaire">+ Nouvel auteur</button>
+      </div>
+
+      <div id="message" class="message"></div>
+
+      <div id="form-card" class="card form-card">
+        <h2 id="form-titre">Ajouter un auteur</h2>
+        <form id="form-auteur" class="form-grid">
+          <input type="hidden" id="auteur-id">
+
+          <div>
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" required>
+          </div>
+
+          <div>
+            <label for="nationalite">Nationalité</label>
+            <input type="text" id="nationalite">
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" id="btn-soumettre">Ajouter</button>
+            <button type="button" id="btn-annuler" class="secondary">Annuler</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <table>
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Nationalité</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="corps-tableau">
+            <tr><td colspan="3" class="text-muted">Chargement...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/auteurs.js"></script>
+</body>
+</html>

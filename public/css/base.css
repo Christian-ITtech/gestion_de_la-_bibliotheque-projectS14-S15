@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --color-ink: #1b0341;
+  --color-ink-muted: #1b0341;
+  --color-paper: #fcfcfc;
+  --color-paper-raised: #FFFFFF;
+  --color-navy: #1F2A44;
+  --color-navy-light: #34456B;
+  --color-brass: #A9812F;
+  --color-sage: #b1b128;
+  --color-sage-bg: #E7EFE8;
+  --color-burgundy: #417a2e;
+  --color-burgundy-bg: #F3E6E4;
+  --color-border: #cbe4d6;
+  --color-border-strong: #C9BFA3;
+  --radius: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Source Serif 4', serif;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--color-ink);
+  background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/image2.avif');
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Source Serif 4', serif;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: white;
+}
+span {
+  color: var(--color-brass);
+  text-align: center;
+}
+h1 {
+  font-size: 26px;
+}
+
+h2 {
+  font-size: 19px;
+}
+
+a {
+  color: inherit;
+}
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  /* background: var(--color-navy); */
+  color: #EDEFF3;
+}
+
+.sidebar-brand {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Source Serif 4', serif;
+  font-size: 17px;
+  font-weight: 600;
+  /* line-height: 1.3; */
+  margin-bottom: 32px;
+}
+
+.nav-link {
+  display: block;
+  padding: 9px 12px;
+  margin-bottom: 2px;
+  border-radius: var(--radius);
+  border-left: 2px solid transparent;
+  font-size: 20px;
+  line-height: 3;
+  color: #C7CCDA;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background: var(--color-navy-light);
+  color: #fff;
+}
+
+.nav-link.active {
+  background: var(--color-navy-light);
+  border-left: 2px solid var(--color-brass);
+  color: #fff;
+}
+
+.main {
+  flex: 1;
+  max-width: 1200px;
+  padding: 36px 44px;
+  margin: 0 auto;
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.page-header p {
+  margin: 4px 0 0;
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* Cartes (bloc générique, réutilisé par plusieurs pages) */
+.card {
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-paper-raised);
+}
+
+/* Formulaires */
+.form-grid {
+  display: grid;
+  gap: 14px;
+  max-width: 420px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-ink-muted);
+}
+
+input,
+select {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--color-ink);
+  background: #fff;
+}
+
+input:focus,
+select:focus,
+.nav-link:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 1px;
+}
+
+button {
+  padding: 9px 10px;
+  border: none;
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--color-navy);
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--color-navy-light);
+}
+
+button.secondary {
+  color: var(--color-ink);
+  background: transparent;
+  border: 1px solid var(--color-border-strong);
+}
+
+button.danger {
+  background: var(--color-burgundy);
+}
+
+/*Messages de succès / erreur */
+.message {
+  display: none;
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  font-size: 13px;
+}
+
+.message.show {
+  display: block;
+}
+
+.message.error {
+  color: var(--color-burgundy);
+  background: var(--color-burgundy-bg);
+}
+
+.message.success {
+  color: var(--color-sage);
+  background: var(--color-sage-bg);
+}
+
+/* ------------------------------------------------------------
+   Badges de statut (utilisés par plusieurs pages)
+   ------------------------------------------------------------ */
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge-disponible {
+  color: var(--color-sage);
+  background: var(--color-sage-bg);
+}
+
+.badge-emprunte {
+  color: var(--color-ink-muted);
+  background: #EDEAE0;
+}
+
+.badge-retard {
+  color: var(--color-burgundy);
+  background: var(--color-burgundy-bg);
+}
+
+.badge-encours {
+  color: var(--color-navy);
+  background: #EAEEF5;
+}
+
+/* ------------------------------------------------------------
+   Tableaux (structure de base, chaque page affine si besoin)
+   ------------------------------------------------------------ */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+thead th {
+  padding: 0 10px 10px;
+  border-bottom: 1px solid var(--color-border-strong);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--color-ink-muted);
+}
+
+tbody td {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ------------------------------------------------------------
+   Barre d'actions au-dessus des tableaux
+   ------------------------------------------------------------ */
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.toolbar .spacer {
+  flex: 1;
+}
+
+.text-muted {
+  font-size: 13px;
+  color: white;
+}
+
+/* sidebar footer */
+.sidebar-footer {
+  margin-top: 30px;
+  padding: 20px 15px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-text {
+  color: rgba(255, 255, 255, 0.6); /* Couleur blanche adoucie */
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.footer-text span {
+  display: block;
+  margin-top: 4px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.4); 
+}
+
+img {
+  max-width: 100%;
+  border-radius: 60%;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+}
+

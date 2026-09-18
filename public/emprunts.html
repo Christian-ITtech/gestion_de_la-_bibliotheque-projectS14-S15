@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Emprunts — Bibliothèque de quartier</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/emprunts.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <nav class="sidebar">
+      <div class="sidebar-brand">
+        <div>
+            <img src="assets/logo.jpg" alt="Logo de la bibliothèque">
+        </div>
+      </div>
+      <a href="index.html" class="nav-link">Tableau de bord</a>
+      <a href="livres.html" class="nav-link">Livres</a>
+      <a href="auteurs.html" class="nav-link">Auteurs</a>
+      <a href="adherents.html" class="nav-link">Adhérents</a>
+      <a href="emprunts.html" class="nav-link active">Emprunts</a>
+
+       <footer class="sidebar-footer">
+      <p class="footer-text">
+        &copy; 2026 Bibliothèque de Quartier.<br>
+        <span>Le cœur de notre communauté, une page à la fois.</span>
+      </p>
+      </footer>
+    </nav>
+
+    <main class="main">
+
+      <div class="page-header">
+        <div>
+          <h1>Emprunts</h1>
+          <p>Créer un emprunt, suivre les retours et les retards.</p>
+        </div>
+        <button id="btn-afficher-formulaire">+ Nouvel emprunt</button>
+      </div>
+
+      <div id="message" class="message"></div>
+
+      <div id="form-card" class="card form-card">
+        <h2>Enregistrer un emprunt</h2>
+        <form id="form-emprunt" class="form-grid">
+
+          <div>
+            <label for="adherent_id">Adhérent</label>
+            <select id="adherent_id" required>
+              <option value="">Sélectionner un adhérent</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="livre_id">Livre (disponible)</label>
+            <select id="livre_id" required>
+              <option value="">Sélectionner un livre</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="date_retour_prevue">Date de retour prévue</label>
+            <input type="date" id="date_retour_prevue" required>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit">Enregistrer l'emprunt</button>
+            <button type="button" id="btn-annuler" class="secondary">Annuler</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="filtres">
+        <button data-filtre="en-cours" class="active">En cours</button>
+        <button data-filtre="en-retard">En retard</button>
+        <button data-filtre="tous">Tous</button>
+      </div>
+
+      <div class="card">
+        <table>
+          <thead>
+            <tr>
+              <th>Adhérent</th>
+              <th>Livre</th>
+              <th>Date d'emprunt</th>
+              <th>Retour prévu</th>
+              <th>Statut</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="corps-tableau">
+            <tr><td colspan="6" class="text-muted">Chargement...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/emprunts.js"></script>
+</body>
+</html>

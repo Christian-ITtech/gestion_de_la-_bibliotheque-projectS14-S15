@@ -1,0 +1,50 @@
+.form-card {
+  display: none;
+  margin-bottom: 24px;
+}
+
+.form-card.show {
+  display: block;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 8px;
+}
+
+.actions-cell button {
+  padding: 5px 10px;
+  font-size: 13px;
+}
+
+.filtres {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.filtres button {
+  padding: 7px 14px;
+  font-size: 13px;
+  color:white;
+  background: transparent;
+  border: 1px solid var(--color-border-strong);
+}
+
+.filtres button.active {
+  color: #fff;
+  background: var(--color-navy);
+  border-color: var(--color-navy);
+}
+
+/* Ligne mise en évidence : emprunt en retard */
+
+tbody tr.row-retard {
+  background: var(--color-burgundy-bg);
+}

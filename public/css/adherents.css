@@ -1,0 +1,40 @@
+.form-card {
+  display: none;
+  margin-bottom: 24px;
+}
+
+.form-card.show {
+  display: block;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 8px;
+}
+
+.actions-cell button {
+  padding: 5px 10px;
+  font-size: 13px;
+}
+
+.historique-card {
+  display: none;
+  margin-top: 24px;
+}
+
+.historique-card.show {
+  display: block;
+}
+
+.historique-card .header-ligne {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
